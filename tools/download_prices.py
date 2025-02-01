@@ -1,9 +1,4 @@
 import os
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
-os.environ["MKL_DEBUG_CPU_TYPE"] = '5'
-import warnings
-warnings.filterwarnings("ignore")
-import os
 import sys
 from pathlib import Path
 import multiprocessing
@@ -18,7 +13,7 @@ from finagent.utils.misc import update_data_root
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Download Prices")
-    parser.add_argument("--config", default=os.path.join(ROOT, "configs", "downloader", "prices", "fmp_day_prices_exp_cryptos.py"), help="download datasets config file path")
+    parser.add_argument("--config", default=os.path.join(ROOT, "configs", "downloader", "prices", "ftse_mib_prices.py"), help="download datasets config file path")
     parser.add_argument(
         '--cfg-options',
         nargs='+',
